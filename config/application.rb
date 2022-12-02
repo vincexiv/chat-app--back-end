@@ -23,6 +23,9 @@ module ChatApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # To allow requests to chat-app-back-end-production.up.railway.app make sure it is a valid hostname (containing only numbers, letters, dashes and dots), then add the following to your environment configuration:
+    config.hosts << "chat-app-back-end-production.up.railway.app"
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

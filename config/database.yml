@@ -79,8 +79,11 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: chat_app_production
-  username: chat_app
-  password: <%= ENV["CHAT_APP_DATABASE_PASSWORD"] %>
+# production:
+#   <<: *default
+#   database: chat_app_production
+#   username: chat_app
+#   password: <%= ENV["CHAT_APP_DATABASE_PASSWORD"] %>
+
+  production:
+    url: <%= ENV["DATABASE_URL"] %>
