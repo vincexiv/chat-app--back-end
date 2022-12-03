@@ -14,6 +14,7 @@ users = []
     password = Faker::Lorem.characters(number: rand(5..15))
 
     users << User.create(
+        full_name: Faker::Name.name,
         email: Faker::Internet.email,
         username: Faker::Internet.username(specifier: 5..10),
         password: password,
