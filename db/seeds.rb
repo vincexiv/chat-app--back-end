@@ -63,9 +63,9 @@ users << User.create(
 
 puts "messages..."
 messages = []
-50.times do
+20.times do
     messages << Message.create(
-        content: Faker::Lorem.paragraph(sentence_count: rand(1..7)),
+        content: Faker::Lorem.paragraph(sentence_count: rand(1..2)),
         sender: users.sample.id,
         receiver: users.sample.id
     )
