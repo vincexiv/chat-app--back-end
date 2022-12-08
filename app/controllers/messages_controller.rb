@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
 
     private
     def message_params
-        params.permit(:content, :sender_id, :receiver_id)
+        params.permit(:content, :sender, :receiver)
     end
 
     def record_not_found
