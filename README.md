@@ -130,28 +130,35 @@ Use this to only get a particular message. Expect a return of `{"error": "Not au
     }
 ```
 
+### PATCH /message/:id
+This one too requires you to be signed in. You are only allowed to patch the contents of a message. Other parameters will be ignore. After a successful patch, you will get the message in the format similar to what you getw with **GET /message/:id**, but with the content modified
 
+### DELETE /message/:id
+You can delete a message too. You will get a status 201 (no content) on a successful deletion with no body in the object
 
+## Configuration
+The api is mainly made using Ruby, so you will need to set it up. That said, it is deployed on [this link](https://chat-app-back-end-production.up.railway.app) which I mentioned above so you can test the api without having to set it up. You might still want to set it up locally, and that you can achieve through the following process;
 
+First, you need to **have installed Ruby, specifically version 2.7.4**. We can't promise on the behavior with any other version. The requirements are;
 
+## Setting it up
+Run the following commands in the following order
+1. `https://github.com/VinceXIV/chat-app--back-end`
+2. `cd chat-app--back-end`
+3. `bundle install`
+4. `rails db:create db:migrate db:seed`
+5. `rails s`
 
-### Ruby version
-2.7.4
+At this point you have started the server and you should be able to consume it. By default, this will be at port 4000 of your machine.
 
+## Support and Contact Details
+email: makokhavomondi@gmail.com
 
+## License
+Copyright (c) 2022 Vincent Makokha
 
-* System dependencies
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files , to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* Configuration
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
