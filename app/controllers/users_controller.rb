@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    before_action :authenticate_user, except: :create
 
     def index
         render json: User.all, status: :ok
@@ -29,5 +30,9 @@ class UsersController < ApplicationController
 
     def record_not_found
         render json: {error: "Not authorized"}, status: :unauthorized
+    end
+
+    def authenticate_user
+        User.find(session[:user_id])
     end
 end

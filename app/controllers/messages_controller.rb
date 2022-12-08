@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    before_action :authenticate_user
 
     def create
         render json: Message.create!(message_params), status: :created
@@ -32,11 +33,15 @@ class MessagesController < ApplicationController
         params.permit(:content, :sender, :receiver)
     end
 
-    def record_not_found(not_found)
-        render json: {error: not_found}, status: :not_found
+    def record_not_found
+        render json: {error: "Not Authorized"}, status: :not_found
     end
 
     def record_invalid(invalid)
         render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end
+
+    def authenticate_user
+        User.find(session[:user_id])
     end
 end
