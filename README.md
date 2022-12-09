@@ -1,7 +1,7 @@
 # Chat App Back End
 
 ## Brief Description
-This is is the back end of the [Chattier Chat App](https://main--euphonious-cannoli-496c7f.netlify.app), that enables persisting of actions such as creating messages, reading, updating, and deleting them by the users. It does this by the two tables/models, which are; [User](###User) and [Message](###Message), which are discuss shortly. You can find the github repo for the front end site [here](https://github.com/VinceXIV/chat-app--front-end). One thing to note ist that the deployed version of the front end doesn't work exactly as I expected so I have attached a video of me playing with the local version. Find the video [here](). As for back end, the deployment was successful with everything working as expected, so you can simply test it on link [this link](https://chat-app-back-end-production.up.railway.app)
+This is is the back end of the [Chattier Chat App](https://main--euphonious-cannoli-496c7f.netlify.app), that enables persisting of actions such as creating messages, reading, updating, and deleting them by the users. It does this by the two tables/models, which are;User and Message, which are discuss shortly. You can find the github repo for the front end site [here](https://github.com/VinceXIV/chat-app--front-end). You can also test the back which has been deployed in [this link](https://chat-app-back-end-production.up.railway.app)
 
 ## Features
 The API provides authentication and authorization of users through some of its end points. It also enables full CRUD operation for one of its models; the **Message** model. For now, it all works using only two models; **User** and **Message**. The following endpoints have been implemented.
