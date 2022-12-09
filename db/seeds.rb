@@ -79,7 +79,7 @@ end
 
 puts "messages..."
 messages = []
-100.times do
+500.times do
     messages << Message.create(
         content: Faker::Lorem.paragraph(sentence_count: rand(1..2)),
         sender: users.sample.id,
