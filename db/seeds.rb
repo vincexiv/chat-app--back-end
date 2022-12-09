@@ -11,6 +11,7 @@ puts "🌱 seeding"
 puts "users..."
 users = []
 
+# Main Users
 users << User.create(
         full_name: "Vincent Makokha",
         email: "vincent@example.com",
@@ -61,9 +62,24 @@ users << User.create(
         profile_picture: Faker::Avatar.image
     )
 
+# More Users
+11.times do |i|
+    password  = Faker::Internet.password
+
+    users << User.create(
+        full_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        username: Faker::Name.name.split(" ").join("")+i.to_s,
+        password: password,
+        password_confirmation: password,
+        bio: Faker::Lorem.paragraph(sentence_count: rand(1..5)),
+        profile_picture: Faker::Avatar.image
+    )
+end
+
 puts "messages..."
 messages = []
-20.times do
+100.times do
     messages << Message.create(
         content: Faker::Lorem.paragraph(sentence_count: rand(1..2)),
         sender: users.sample.id,
